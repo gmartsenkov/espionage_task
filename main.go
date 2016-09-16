@@ -11,8 +11,10 @@ import (
 
 func main() {
 	start := stopwatch.Start()
+	tries := 0
 	arr := []int{1, 2, 4, 5, 6, 7, 8, 9}
 	for {
+		tries++
 		shuffledArr := shuffle(arr[0:])
 		a := arrToInt(shuffledArr[0:3])
 		b := 30 + shuffledArr[3]
@@ -20,7 +22,7 @@ func main() {
 		fmt.Printf("%v * %v == %v \n", a, b, result)
 		if a*b == result {
 			watch := stopwatch.Stop(start)
-			fmt.Printf("Milliseconds elapsed: %v\n", watch.Milliseconds())
+			fmt.Printf("Tries: %v, Milliseconds elapsed: %v\n", tries, watch.Milliseconds())
 			os.Exit(0)
 		}
 	}
