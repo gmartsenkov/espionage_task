@@ -19,9 +19,9 @@ func main() {
 		a := arrToInt(shuffledArr[0:3])
 		b := 30 + shuffledArr[3]
 		result := arrToInt(shuffledArr[4:])
-		fmt.Printf("%v * %v == %v \n", a, b, result)
 		if a*b == result {
 			watch := stopwatch.Stop(start)
+			fmt.Printf("%v * %v == %v \n", a, b, result)
 			fmt.Printf("Tries: %v, Milliseconds elapsed: %v\n", tries, watch.Milliseconds())
 			os.Exit(0)
 		}
